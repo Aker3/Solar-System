@@ -1,0 +1,47 @@
+.planet_img {
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  width: 9rem;
+  height: 9rem;
+  transition: all 0.2s ease-in-out;
+}
+.planet_img_large {
+  width: 25rem;
+  height: 25rem;
+}
+.textDescription {
+  width: 35rem;
+}
+.img_container {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+}
+
+main {
+  padding: 2rem;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.description {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+}
+.propiertyPlanet {
+  padding: 0.5rem;
+}
+
+.planet {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  font-size: 1.2rem;
+  width: 11rem;
+  border-radius: 0.7rem;
+  margin: 0.3rem 0.3rem;
+  padding: 0.5rem 0.5rem;
+  overflow: visible;
+}
