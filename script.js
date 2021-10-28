@@ -14,7 +14,7 @@ const getData = async () => {
     html += `<div class="planet"><div class="img_container"><img class="planet_img" src="${element.image}" /></div>
     <div class="propiertyPlanet">
     <h3>${element.name}</h3>
-    <p> velocity: ${element.velocity}</p>
+    <p> radius: ${element.radius}</p>
     <p> distance: ${element.distance}</p>
     <p> symbol: ${element.symbol}</p>
     </div>

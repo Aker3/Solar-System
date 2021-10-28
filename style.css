@@ -18,13 +18,19 @@
   width: 9rem;
   height: 9rem;
 }
-
 main {
+  margin: auto;
+}
+body {
+  margin: auto;
+  width: 70rem;
   padding: 2rem;
+  font-family: Helvetica;
 }
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-content: center;
 }
 .description {
@@ -34,14 +40,22 @@ main {
 .propiertyPlanet {
   padding: 0.5rem;
 }
-
+p {
+  margin: 0.1rem;
+}
 .planet {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   width: 11rem;
   border-radius: 0.7rem;
   margin: 0.3rem 0.3rem;
   padding: 0.5rem 0.5rem;
   overflow: visible;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  body {
+    background-color: blue;
+  }
 }
