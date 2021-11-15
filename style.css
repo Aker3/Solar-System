@@ -2,26 +2,34 @@
   position: absolute;
   top: 12.5%;
   left: 12.5%;
-  width: 9rem;
-  height: 9rem;
+  width: 7rem;
+  height: 7rem;
   transition: all 0.2s ease-in-out;
 }
+.title {
+  padding-top: 0.5 rem;
+  text-align: center;
+  font-family: Bodoni MT;
+  font-size: 2rem;
+}
 .planet_img_large {
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
+  margin-right: 2rem;
 }
 .textDescription {
   width: 35rem;
 }
 .img_container {
   position: relative;
-  width: 9rem;
-  height: 9rem;
+  width: 7rem;
+  height: 7rem;
 }
 main {
   margin: auto;
 }
 body {
+  display: flex;
   margin: auto;
   width: 70rem;
   padding: 2rem;
@@ -32,30 +40,52 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
+  border-radius: 0.1rem;
+  border: 1px solid #d3d3d3;
+  background-color: #fafafa;
+  padding: 0.3rem;
 }
 .description {
+  align-content: center;
   padding-top: 1rem;
-  font-size: 1.2rem;
 }
 .propiertyPlanet {
   padding: 0.5rem;
 }
+
 p {
   margin: 0.1rem;
 }
+
+@media screen and (max-width: 1200px) {
+  .factsPlanet {
+    display: none;
+  }
+  body {
+    width: auto;
+  }
+  html {
+    width: auto;
+    font-size: 0.8rem;
+  }
+}
 .planet {
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  font-size: 1.1rem;
-  width: 11rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+  width: 9rem;
   border-radius: 0.7rem;
   margin: 0.3rem 0.3rem;
   padding: 0.5rem 0.5rem;
   overflow: visible;
 }
-
-@media screen and (min-width: 800px) and (max-width: 1024px) {
-  body {
-    background-color: blue;
-  }
+h3 {
+  margin-bottom: 0.2rem;
+}
+h3:hover {
+  cursor: pointer;
+}
+body {
+  padding: 1%;
+  background-color: #fafafa;
+  font-size: 0.9rem;
 }

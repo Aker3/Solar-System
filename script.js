@@ -1,5 +1,6 @@
 "use strict";
 const planetsContainer = document.querySelector(".container");
+
 const getData = async () => {
   const res = await fetch("planets.json");
   const data = await res.json();
@@ -7,16 +8,16 @@ const getData = async () => {
   let lengthData = data.length;
   console.log(lengthData);
 
-  let html = "";
+  let html = ``;
   data.forEach((element, index) => {
     // element = index === 0 ? data[lengthData - 1] : data[index - 1];
 
-    html += `<div class="planet"><div class="img_container"><img class="planet_img" src="${element.image}" /></div>
+    html += `<div class="planet"><div class="img_container"><img loading="lazy" class="planet_img" src="${element.image}" /></div>
     <div class="propiertyPlanet">
     <h3>${element.name}</h3>
-    <p> radius: ${element.radius}</p>
-    <p> distance: ${element.distance}</p>
-    <p> symbol: ${element.symbol}</p>
+    <p class="factsPlanet"> radius: ${element.radius}</p>
+    
+    <p class="factsPlanet"> symbol: ${element.symbol}</p>
     </div>
     </div>
     `;
@@ -33,7 +34,6 @@ const getData = async () => {
   planetsContainer.addEventListener("mouseout", (e) => {
     if (e.target.classList.contains("planet_img")) {
       e.target.style.transform = "scale(1,1)";
-      e.target.style.width = "9rem";
     }
   });
   planetsContainer.addEventListener("click", (e) => {
