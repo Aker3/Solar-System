@@ -1,10 +1,11 @@
 .planet_img {
   position: absolute;
   top: 12.5%;
-  left: 12.5%;
-  width: 7rem;
-  height: 7rem;
+  left: 25%;
+  width: 3.5rem;
+  height: 3.5rem;
   transition: all 0.2s ease-in-out;
+  pointer-events: auto;
 }
 .title {
   padding-top: 0.5 rem;
@@ -22,8 +23,8 @@
 }
 .img_container {
   position: relative;
-  width: 7rem;
-  height: 7rem;
+  width: 3rem;
+  height: 3rem;
 }
 main {
   margin: auto;
@@ -44,6 +45,7 @@ body {
   border: 1px solid #d3d3d3;
   background-color: #fafafa;
   padding: 0.3rem;
+  /* pointer-events: none; */
 }
 .description {
   align-content: center;
@@ -57,7 +59,7 @@ p {
   margin: 0.1rem;
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
   .factsPlanet {
     display: none;
   }
@@ -66,26 +68,35 @@ p {
   }
   html {
     width: auto;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 .planet {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
-  width: 9rem;
-  border-radius: 0.7rem;
+  width: 5rem;
+  border-radius: 0.5rem;
   margin: 0.3rem 0.3rem;
   padding: 0.5rem 0.5rem;
-  overflow: visible;
+  /* overflow: visible; */
+  border: 3px solid transparent;
 }
-h3 {
-  margin-bottom: 0.2rem;
+
+.planet > * {
+  pointer-events: none;
 }
-h3:hover {
-  cursor: pointer;
+
+.planet:not(.planetClicked):hover {
+  border: 3px solid #d3d3d3;
 }
+.planetClicked {
+  /* pointer-events: none; */
+  border: 3px solid #95acc7;
+  pointer-events: none;
+}
+
 body {
   padding: 1%;
   background-color: #fafafa;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }

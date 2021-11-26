@@ -10,20 +10,17 @@ const getData = async () => {
 
   let html = ``;
   data.forEach((element, index) => {
-    // element = index === 0 ? data[lengthData - 1] : data[index - 1];
-
-    html += `<div class="planet"><div class="img_container"><img loading="lazy" class="planet_img" src="${element.image}" /></div>
+    html += `<div class="planet" id="${element.name}"><div class="img_container"><img class="planet_img" src="${element.image}" /></div>
     <div class="propiertyPlanet">
-    <h3>${element.name}</h3>
-    <p class="factsPlanet"> radius: ${element.radius}</p>
-    
-    <p class="factsPlanet"> symbol: ${element.symbol}</p>
+    <h3 class="titlePlanet">${element.name}</h3>
+    <p class="factsPlanet"> radius: <br>${element.radius}</p>
+    <p class="factsPlanet"> symbol: <br>${element.symbol}</p>
     </div>
     </div>
     `;
   });
 
-  //Event delegation in planets container
+  //Listener for mouseover  Event delegation in planets container
   planetsContainer.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("planet_img")) {
       e.target.style.transform = "scale(1.2,1.2)";
@@ -36,23 +33,37 @@ const getData = async () => {
       e.target.style.transform = "scale(1,1)";
     }
   });
+  let lastClickedElement;
+
+  //Listener for click  Event delegation in planets container
   planetsContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("planet_img")) {
-      // let nameSelected = e.target.nextElementSibling.textContent
-      //   .split("\n")[1]
-      //   .trim();
-      console.log(e.target);
+    e.stopPropagation;
+
+    let target = e.target.classList.contains("planet_img")
+      ? e.target.parentElement.parentElement
+      : e.target.classList.contains("planet")
+      ? e.target
+      : false;
+
+    if (target && !target.classList.contains("planetClicked")) {
+      console.log(target);
+      target.classList.add("planetClicked");
       let result = data.filter((obj) => {
-        return obj.image === e.target.getAttribute("src");
+        return obj.name === target.getAttribute("id");
       });
       console.log(result);
 
+      if (lastClickedElement)
+        lastClickedElement.classList.remove("planetClicked");
+
+      lastClickedElement = target;
       changeDescription(result[0]);
     }
   });
 
   planetsContainer.insertAdjacentHTML("beforeend", html);
 };
+
 const changeDescription = (element) => {
   let elDesc = document.querySelector(".description");
   console.log(elDesc);
