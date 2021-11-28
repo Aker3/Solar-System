@@ -7,12 +7,23 @@
   transition: all 0.2s ease-in-out;
   pointer-events: auto;
 }
+
+.mainTitle {
+  position: absolute;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 0;
+}
+h1 {
+  text-align: center;
+}
 .title {
   padding-top: 0.5 rem;
   text-align: center;
   font-family: Bodoni MT;
   font-size: 2rem;
 }
+
 .planet_img_large {
   width: 20rem;
   height: 20rem;
@@ -26,17 +37,22 @@
   width: 3rem;
   height: 3rem;
 }
-main {
-  margin: auto;
-}
+
 body {
   display: flex;
-  margin: auto;
+  /* 
   width: 70rem;
-  padding: 2rem;
+  padding: 2rem; */
   font-family: Helvetica;
 }
+
+.container_selPlanets {
+  margin-top: 5rem;
+}
+
 .container {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -48,8 +64,9 @@ body {
   /* pointer-events: none; */
 }
 .description {
+  margin-top: 0%;
   align-content: center;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 }
 .propiertyPlanet {
   padding: 0.5rem;
@@ -67,7 +84,6 @@ p {
     width: auto;
   }
   html {
-    width: auto;
     font-size: 0.7rem;
   }
 }
@@ -96,7 +112,11 @@ p {
 }
 
 body {
-  padding: 1%;
   background-color: #fafafa;
+  margin: 0;
+}
+
+.main {
+  margin: auto;
   font-size: 0.85rem;
 }
