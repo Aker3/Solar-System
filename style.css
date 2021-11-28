@@ -76,15 +76,18 @@ p {
   margin: 0.1rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
   .factsPlanet {
     display: none;
   }
   body {
-    width: 100vw;
+    margin: auto;
   }
   html {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
+  }
+  .textDescription {
+    width: 100%;
   }
 }
 .planet {
@@ -113,7 +116,7 @@ p {
 
 body {
   background-color: #fafafa;
-  margin: 0;
+  /* margin: 0; */
 }
 
 .main {
