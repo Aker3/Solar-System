@@ -118,6 +118,10 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
+  .planet {
+    margin: 0.2rem 0.2rem;
+    padding: 0.1rem 0.1rem;
+  }
   h3 {
     margin: 0.2rem;
     text-align: center;
