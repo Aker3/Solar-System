@@ -10,14 +10,20 @@ const getData = async () => {
 
   let html = ``;
   data.forEach((element, index) => {
-    html += `<div class="planet" id="${element.name}"><div class="img_container"><img class="planet_img" src="${element.image}" /></div>
-    <div class="propiertyPlanet">
-    <h3 class="titlePlanet">${element.name}</h3>
-    <p class="factsPlanet"> radius: <br>${element.radius}</p>
-    <p class="factsPlanet"> symbol: <br>${element.symbol}</p>
-    </div>
-    </div>
-    `;
+    html += `<div class="planet" id="${element.name}">
+        <div class="img_container">
+          <img class="planet_img" src="${element.image}" />
+        </div>
+        <div class="propiertyPlanet">
+          <h3 class="titlePlanet">${element.name}</h3>
+          <p class="factsPlanet">
+            radius: <br />${element.radius}
+          </p>
+          <p class="factsPlanet">
+            symbol: <br />${element.symbol}
+          </p>
+        </div>
+      </div>`;
   });
 
   //Listener for mouseover  Event delegation in planets container
@@ -67,10 +73,13 @@ const getData = async () => {
 const changeDescription = (element) => {
   let elDesc = document.querySelector(".description");
   console.log(elDesc);
-  const regex = /.*/;
-  elDesc.innerHTML = elDesc.innerHTML.replace(
-    regex,
-    `<div class="container"><img class="planet_img_large" src="${element.image}" /><div class="textDescription"><h3>${element.name}</h3><p>${element.description}</p><div></div>`
-  );
+
+  elDesc.innerHTML = `<div class="container">
+      <img class="planet_img_large" src="${element.image}" />
+      <div class="textDescription">
+        <div class="titleDesc">${element.name}   ${element.symbol}</div>
+        <p>${element.description}</p>
+      </div>
+    </div>`;
 };
 getData();

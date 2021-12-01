@@ -7,13 +7,18 @@
   transition: all 0.2s ease-in-out;
   pointer-events: auto;
 }
-
+.titleDesc {
+  font: 1.5rem sans-serif;
+  padding: 2rem 0rem;
+}
 .mainTitle {
   position: absolute;
   width: 100%;
   background-color: rgb(255, 255, 255);
-  margin-left: 0;
+  margin-left: 0px;
+  border: 1px solid #d3d3d3;
 }
+
 h1 {
   text-align: center;
 }
@@ -44,10 +49,11 @@ body {
   width: 70rem;
   padding: 2rem; */
   font-family: Helvetica;
+  margin: 0;
 }
 
 .container_selPlanets {
-  margin-top: 5rem;
+  margin-top: 5.1rem;
 }
 
 .container {
@@ -76,27 +82,14 @@ p {
   margin: 0.1rem;
 }
 
-@media only screen and (max-width: 1000px) {
-  .factsPlanet {
-    display: none;
-  }
-  body {
-    margin: auto;
-  }
-  html {
-    font-size: 0.8rem;
-  }
-  .textDescription {
-    width: 100%;
-  }
-}
 .planet {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
   width: 5rem;
   border-radius: 0.5rem;
   margin: 0.3rem 0.3rem;
-  padding: 0.5rem 0.5rem;
+  padding: 0.2rem 0.2rem;
+
   /* overflow: visible; */
   border: 3px solid transparent;
 }
@@ -122,4 +115,23 @@ body {
 .main {
   margin: auto;
   font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  h3 {
+    margin: 0.2rem;
+    text-align: center;
+  }
+  .factsPlanet {
+    display: none;
+  }
+  body {
+    margin: auto;
+  }
+  html {
+    font-size: 0.8rem;
+  }
+  .textDescription {
+    width: 100%;
+  }
 }
