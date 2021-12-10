@@ -1,15 +1,6 @@
-.planet_img {
-  position: absolute;
-  top: 12.5%;
-  left: 25%;
-  width: 3.5rem;
-  height: 3.5rem;
-  transition: all 0.2s ease-in-out;
-  pointer-events: auto;
-}
 .titleDesc {
   font: 1.5rem sans-serif;
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
 }
 .mainTitle {
   position: absolute;
@@ -23,7 +14,7 @@ h1 {
   text-align: center;
 }
 .title {
-  padding-top: 0.5 rem;
+  padding-top: 0.5rem;
   text-align: center;
   font-family: Bodoni MT;
   font-size: 2rem;
@@ -32,11 +23,23 @@ h1 {
 .planet_img_large {
   width: 20rem;
   height: 20rem;
-  margin-right: 2rem;
+  float: left;
+  margin: 0 2rem 3rem 1rem;
 }
+
 .textDescription {
   width: 35rem;
+  margin: 0 1rem;
 }
+.container_desc {
+  border: 1px solid #d3d3d3;
+  border-width: 0px 1px;
+}
+.textDescription2 {
+  width: 55rem;
+  margin: 0 1rem;
+}
+
 .img_container {
   position: relative;
   width: 3rem;
@@ -58,53 +61,72 @@ body {
 
 .container {
   position: relative;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  border-radius: 0.1rem;
+
   border: 1px solid #d3d3d3;
+  border-width: 0px 1px;
+
   background-color: #fafafa;
   padding: 0.3rem;
   /* pointer-events: none; */
 }
+
 .description {
   margin-top: 0%;
   align-content: center;
   /* padding-top: 1rem; */
 }
 .propiertyPlanet {
+  margin-top: 1.2rem;
   padding: 0.5rem;
+  border-top: 1px solid #d3d3d3;
 }
 
 p {
-  margin: 0.1rem;
+  margin: 0.3rem;
+}
+
+/************ PLANETS ************/
+.planet_img {
+  position: absolute;
+  top: 12.5%;
+  left: 25%;
+  width: 3.5rem;
+  height: 3.5rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .planet {
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
-  width: 5rem;
+  /* box-shadow: 0rem 0rem 0.3rem rgb(173, 173, 173); */
+  width: 5.5rem;
   border-radius: 0.5rem;
   margin: 0.3rem 0.3rem;
-  padding: 0.2rem 0.2rem;
+  padding: 0.1rem 0.1rem;
 
   /* overflow: visible; */
-  border: 3px solid transparent;
+  border: 1px solid #d3d3d3;
 }
-
 .planet > * {
   pointer-events: none;
 }
 
 .planet:not(.planetClicked):hover {
-  border: 3px solid #d3d3d3;
+  border: 1px solid transparent;
+  outline: 3px solid #d3d3d3;
 }
 .planetClicked {
   /* pointer-events: none; */
-  border: 3px solid #95acc7;
+  outline: 3px solid #95acc7;
+
   pointer-events: none;
+}
+
+.titlePlanet {
+  margin: 0.2rem;
 }
 
 body {
@@ -118,24 +140,40 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
+  .container {
+    margin: auto;
+  }
+  .container_desc {
+    padding: 1rem;
+    width: 100%;
+  }
+  .textDescription2 {
+    width: auto;
+    padding-right: 2rem;
+  }
   .planet {
     margin: 0.2rem 0.2rem;
     padding: 0.1rem 0.1rem;
+    width: 4.5rem;
   }
-  h3 {
-    margin: 0.2rem;
+  .titlePlanet {
+    margin: 0;
     text-align: center;
+  }
+  .propiertyPlanet {
+    padding: 0.5rem 0;
   }
   .factsPlanet {
     display: none;
   }
-  body {
-    margin: auto;
+  .planet_img_large {
+    float: none;
+    margin: 0;
+  }
+  .main {
+    width: 100%;
   }
   html {
     font-size: 0.8rem;
-  }
-  .textDescription {
-    width: 100%;
   }
 }

@@ -4,10 +4,9 @@ const planetsContainer = document.querySelector(".container");
 const getData = async () => {
   const res = await fetch("planets.json");
   const data = await res.json();
-  console.log(data);
-  let lengthData = data.length;
-  console.log(lengthData);
-
+  // console.log(data);
+  // let lengthData = data.length;
+  // console.log(lengthData);
   let html = ``;
   data.forEach((element, index) => {
     html += `<div class="planet" id="${element.name}">
@@ -17,10 +16,11 @@ const getData = async () => {
         <div class="propiertyPlanet">
           <h3 class="titlePlanet">${element.name}</h3>
           <p class="factsPlanet">
-            radius: <br />${element.radius}
+          <span class="attributeCard">radius</span>: <br /><span class=>${element.radius}
           </p>
+          
           <p class="factsPlanet">
-            symbol: <br />${element.symbol}
+            <span class="attributeCard">distance</span>: <br />${element.distance}
           </p>
         </div>
       </div>`;
@@ -28,15 +28,18 @@ const getData = async () => {
 
   //Listener for mouseover  Event delegation in planets container
   planetsContainer.addEventListener("mouseover", (e) => {
-    if (e.target.classList.contains("planet_img")) {
-      e.target.style.transform = "scale(1.2,1.2)";
-      e.target.style.cursor = "pointer";
+    if (e.target.classList.contains("planet")) {
+      e.target.getElementsByClassName("planet_img")[0].style.transform =
+        "scale(1.2,1.2)";
+      e.target.getElementsByClassName("planet_img")[0].style.transform =
+        "pointer";
     }
   });
 
   planetsContainer.addEventListener("mouseout", (e) => {
-    if (e.target.classList.contains("planet_img")) {
-      e.target.style.transform = "scale(1,1)";
+    if (e.target.classList.contains("planet")) {
+      e.target.getElementsByClassName("planet_img")[0].style.transform =
+        "scale(1,1)";
     }
   });
   let lastClickedElement;
@@ -74,12 +77,26 @@ const changeDescription = (element) => {
   let elDesc = document.querySelector(".description");
   console.log(elDesc);
 
-  elDesc.innerHTML = `<div class="container">
+  elDesc.innerHTML = `<div class="container_desc">
       <img class="planet_img_large" src="${element.image}" />
-      <div class="textDescription">
+      <div class="textDescription2">
         <div class="titleDesc">${element.name}   ${element.symbol}</div>
         <p>${element.description}</p>
+        
       </div>
-    </div>`;
+      <br>
+      <div class="textDescription2">
+      <p>${element.description2}</p>
+      </div>
+      <br>
+      <div class="textDescription2">
+      <p>${element.description3}</p>
+      </div>
+    </div>
+    
+   
+    
+    `;
 };
+
 getData();
