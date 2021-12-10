@@ -42,7 +42,7 @@ h1 {
 
 .img_container {
   position: relative;
-  width: 3rem;
+
   height: 3rem;
 }
 
@@ -93,8 +93,7 @@ p {
 .planet_img {
   position: absolute;
   top: 12.5%;
-  left: 25%;
-  width: 3.5rem;
+  left: 18.1%;
   height: 3.5rem;
   transition: all 0.2s ease-in-out;
 }
@@ -105,7 +104,6 @@ p {
   width: 5.5rem;
   border-radius: 0.5rem;
   margin: 0.3rem 0.3rem;
-  padding: 0.1rem 0.1rem;
 
   /* overflow: visible; */
   border: 1px solid #d3d3d3;
@@ -141,7 +139,8 @@ body {
 
 @media only screen and (max-width: 1000px) {
   .container {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .container_desc {
     padding: 1rem;
@@ -153,8 +152,11 @@ body {
   }
   .planet {
     margin: 0.2rem 0.2rem;
-    padding: 0.1rem 0.1rem;
+    padding: 0rem 0rem;
     width: 4.5rem;
+  }
+  .planet_img {
+    left: 12.5%;
   }
   .titlePlanet {
     margin: 0;

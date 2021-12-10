@@ -93,9 +93,6 @@ const changeDescription = (element) => {
       <p>${element.description3}</p>
       </div>
     </div>
-    
-   
-    
     `;
 };
 
