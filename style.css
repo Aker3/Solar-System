@@ -126,21 +126,50 @@ p {
 .titlePlanet {
   margin: 0.2rem;
 }
+.cell-1 {
+  background-color: #fff;
+  padding: 0.3rem;
+  border: 1px solid #d3d3d3;
+  margin: 0 -1px -1px 0;
+}
+.cell-2 {
+  background: #fff;
+  padding: 0.3rem;
+  color: #253f5a;
+  border: 1px solid #d3d3d3;
+  margin: 0 -1px -1px 0;
+}
 
 body {
   background-color: #fafafa;
+  overflow-x: hidden; /* Hide scrollbars */
   /* margin: 0; */
+}
+.grid-desc {
+  width: 90vh;
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  margin: 2rem 1rem 3rem 1rem;
 }
 
 .main {
   margin: auto;
+
   font-size: 0.85rem;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
+  .grid-desc {
+    width: 30vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 3fr;
+    margin-top: 1rem;
+  }
   .container {
     margin-left: auto;
-    margin-right: auto;
+    width: 100%;
   }
   .container_desc {
     padding: 1rem;
@@ -169,6 +198,7 @@ body {
     display: none;
   }
   .planet_img_large {
+    padding-left: 15%;
     float: none;
     margin: 0;
   }

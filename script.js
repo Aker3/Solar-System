@@ -1,12 +1,20 @@
-"use strict";
-const planetsContainer = document.querySelector(".container");
+import { styleText } from "./utilities.js";
 
-const getData = async () => {
-  const res = await fetch("planets.json");
+const GetDataSolarSystemApi = async (bodyId) => {
+  const res = await fetch(
+    `https://api.le-systeme-solaire.net/rest/bodies/${bodyId}`
+  );
   const data = await res.json();
   // console.log(data);
-  // let lengthData = data.length;
-  // console.log(lengthData);
+  return Promise.resolve(data);
+};
+
+const getData = async () => {
+  const planetsContainer = document.querySelector(".container");
+
+  //json fetch
+  const res = await fetch("planets.json");
+  const data = await res.json();
   let html = ``;
   data.forEach((element, index) => {
     html += `<div class="planet" id="${element.name}">
@@ -60,22 +68,41 @@ const getData = async () => {
       let result = data.filter((obj) => {
         return obj.name === target.getAttribute("id");
       });
-      console.log(result);
+      console.log(result[0].name);
 
       if (lastClickedElement)
         lastClickedElement.classList.remove("planetClicked");
 
-      lastClickedElement = target;
-      changeDescription(result[0]);
+      GetDataSolarSystemApi(result[0].name).then((stats) => {
+        console.log(stats);
+        lastClickedElement = target;
+        changeDescription(result[0], stats);
+      });
     }
   });
-
   planetsContainer.insertAdjacentHTML("beforeend", html);
 };
 
-const changeDescription = (element) => {
+/////////////////////Display the planet data
+const changeDescription = (element, stats) => {
   let elDesc = document.querySelector(".description");
   console.log(elDesc);
+  let statsTable = "";
+  console.log(stats);
+  let n = 2;
+  for (let [key, value] of Object.entries(stats)) {
+    if (
+      key !== "id" &&
+      key !== "name" &&
+      value !== "" &&
+      value !== null &&
+      typeof value !== "object"
+    ) {
+      statsTable += `<div class="cell-1">${styleText(
+        key
+      )}:</div> <div class="cell-2">${value} </div>`;
+    }
+  }
 
   elDesc.innerHTML = `<div class="container_desc">
       <img class="planet_img_large" src="${element.image}" />
@@ -92,8 +119,17 @@ const changeDescription = (element) => {
       <div class="textDescription2">
       <p>${element.description3}</p>
       </div>
+      <div class=" grid-desc">
+      ${statsTable}
+      </div>
     </div>
     `;
 };
 
 getData();
+
+console.log(styleText("camelCase"));
+
+// console.log(data);
+// let lengthData = data.length;
+// console.log(lengthData);
