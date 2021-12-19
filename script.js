@@ -88,19 +88,26 @@ const changeDescription = (element, stats) => {
   let elDesc = document.querySelector(".description");
   console.log(elDesc);
   let statsTable = "";
+  let statsTable2 = "";
   console.log(stats);
   let n = 2;
   for (let [key, value] of Object.entries(stats)) {
     if (
-      key !== "id" &&
-      key !== "name" &&
-      value !== "" &&
-      value !== null &&
+      !["id", "name", "englishName", "isPlanet"].includes(key) &&
+      value &&
       typeof value !== "object"
     ) {
       statsTable += `<div class="cell-1">${styleText(
         key
       )}:</div> <div class="cell-2">${value} </div>`;
+    }
+  }
+  let titleMoons = "";
+  if (stats.moons) {
+    titleMoons = `<div class="title-desc">Moons</div>`;
+    for (let moon of Object.entries(stats.moons)) {
+      statsTable2 += `
+    <div class="cell-2">${moon[1].moon} </div>`;
     }
   }
 
@@ -109,7 +116,6 @@ const changeDescription = (element, stats) => {
       <div class="textDescription2">
         <div class="titleDesc">${element.name}   ${element.symbol}</div>
         <p>${element.description}</p>
-        
       </div>
       <br>
       <div class="textDescription2">
@@ -119,8 +125,12 @@ const changeDescription = (element, stats) => {
       <div class="textDescription2">
       <p>${element.description3}</p>
       </div>
-      <div class=" grid-desc">
+      <div class="grid-desc">
       ${statsTable}
+      </div>
+      ${titleMoons}
+      <div class="grid-desc">
+      ${statsTable2}
       </div>
     </div>
     `;

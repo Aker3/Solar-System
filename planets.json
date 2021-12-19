@@ -2,7 +2,7 @@
   {
     "position": "0",
     "name": "Sun",
-    "image": "http://pngimg.com/uploads/sun/sun_PNG13424.png",
+    "image": "images/large/sun_transparent.png",
     "symbol": "☉",
     "radius": "695,700",
     "distance": "0",
@@ -13,7 +13,7 @@
   {
     "position": "1",
     "name": "Mercury",
-    "image": "http://space-facts.com/wp-content/uploads/mercury-transparent.png",
+    "image": "images/large/mercury-transparent.png",
     "symbol": "☿",
     "radius": "4880",
     "distance": "58",
@@ -24,7 +24,7 @@
   {
     "position": "2",
     "name": "Venus",
-    "image": "http://space-facts.com/wp-content/uploads/venus-transparent.png",
+    "image": "images/large/venus-transparent.png",
     "symbol": "♀",
     "radius": "6051",
     "distance": "108",
@@ -35,7 +35,7 @@
   {
     "position": "3",
     "name": "Earth",
-    "image": "http://space-facts.com/wp-content/uploads/earth-transparent.png",
+    "image": "images/large/earth-transparent.png",
     "symbol": "ⴲ",
     "radius": "6371",
     "distance": "149",
@@ -46,7 +46,7 @@
   {
     "position": "4",
     "name": "Mars",
-    "image": "http://space-facts.com/wp-content/uploads/mars-transparent.png",
+    "image": "images/large/mars-transparent.png",
     "symbol": "♂",
     "radius": "3389",
     "distance": "227",
@@ -57,7 +57,7 @@
   {
     "position": "5",
     "name": "Jupiter",
-    "image": "http://space-facts.com/wp-content/uploads/jupiter-transparent.png",
+    "image": "images/large/jupiter-transparent.png",
     "symbol": "♃",
     "radius": "69,911",
     "distance": "778",
@@ -68,7 +68,7 @@
   {
     "position": "6",
     "name": "Saturn",
-    "image": "http://space-facts.com/wp-content/uploads/saturn-transparent.png",
+    "image": "images/large/saturn-transparent.png",
     "symbol": "♄",
     "radius": "58,232",
     "distance": "1426",
@@ -79,7 +79,7 @@
   {
     "position": "7",
     "name": "Uranus",
-    "image": "http://space-facts.com/wp-content/uploads/uranus-transparent.png",
+    "image": "images/large/uranus-transparent.png",
     "symbol": "⛢",
     "radius": "25,362",
     "distance": "2870",
@@ -90,7 +90,7 @@
   {
     "position": "8",
     "name": "Neptune",
-    "image": "http://space-facts.com/wp-content/uploads/neptune-transparent.png",
+    "image": "images/large/neptune-transparent.png",
     "symbol": "♆",
     "radius": "24,622",
     "distance": "4498",
